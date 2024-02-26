@@ -181,7 +181,7 @@ addToCart.addEventListener('click', (e) => {
 
     items.insertAdjacentHTML('beforeend', `
     <div class="item">
-      <img src="/images/image-product-1-thumbnail.jpg" alt="" class="item_img">
+      <img src="images/image-product-1-thumbnail.jpg" alt="" class="item_img">
 
       <div>
         <p class="product_description">${itemName.innerHTML.replace('<br>', '')}</p>
@@ -191,7 +191,7 @@ addToCart.addEventListener('click', (e) => {
         </p>
       </div>
     
-      <img src="/images/icon-delete.svg" alt="a trashbin icon" class="delete_item">
+      <img src="images/icon-delete.svg" alt="a trashbin icon" class="delete_item">
     </div>
     `);
 
@@ -228,29 +228,29 @@ const desktopSlide = document.querySelector('.desktop_slide_container');
 
       desktopSlide.insertAdjacentHTML('beforeend', `
         <div class="slider">
-          <div class="slide"><img src="/images/image-product-1.jpg" alt="product view 1"></div>
-          <div class="slide"><img src="/images/image-product-2.jpg" alt="product view 2"></div>
-          <div class="slide"><img src="/images/image-product-3.jpg" alt="product view 3"></div>
-          <div class="slide"><img src="/images/image-product-4.jpg" alt="product view 4"></div>
+          <div class="slide"><img src="images/image-product-1.jpg" alt="product view 1"></div>
+          <div class="slide"><img src="images/image-product-2.jpg" alt="product view 2"></div>
+          <div class="slide"><img src="images/image-product-3.jpg" alt="product view 3"></div>
+          <div class="slide"><img src="images/image-product-4.jpg" alt="product view 4"></div>
         </div>
 
 
         <div class="slider__controls desktop_controls">
           <div class="slider__btn slider__btn--left">
-            <img src="/images/icon-previous.svg" alt="left direction icon">
+            <img src="images/icon-previous.svg" alt="left direction icon">
           </div>
 
           <div class="slider__btn slider__btn--right">
-            <img src="/images/icon-next.svg" alt="right direction icon">
+            <img src="images/icon-next.svg" alt="right direction icon">
           </div>
         </div>
 
 
         <div class="thumbnails">
-          <div class="thumbnail"><img src="/images/image-product-1-thumbnail.jpg" alt="product thumbnail image 1" class="thumbnail_img thumbnail_active"></div>
-          <div class="thumbnail"><img src="/images/image-product-2-thumbnail.jpg" alt="product thumbnail image 2" class="thumbnail_img"></div>
-          <div class="thumbnail"><img src="/images/image-product-3-thumbnail.jpg" alt="product thumbnail image 3" class="thumbnail_img"></div>
-          <div class="thumbnail"><img src="/images/image-product-4-thumbnail.jpg" alt="product thumbnail image 4" class="thumbnail_img"></div>
+          <div class="thumbnail"><img src="images/image-product-1-thumbnail.jpg" alt="product thumbnail image 1" class="thumbnail_img thumbnail_active"></div>
+          <div class="thumbnail"><img src="images/image-product-2-thumbnail.jpg" alt="product thumbnail image 2" class="thumbnail_img"></div>
+          <div class="thumbnail"><img src="images/image-product-3-thumbnail.jpg" alt="product thumbnail image 3" class="thumbnail_img"></div>
+          <div class="thumbnail"><img src="images/image-product-4-thumbnail.jpg" alt="product thumbnail image 4" class="thumbnail_img"></div>
         </div> 
       `);
       // console.log(document.querySelector('.desktop_controls').getBoundingClientRect());
