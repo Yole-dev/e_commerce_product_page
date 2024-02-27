@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
 
 
 :root {
@@ -41,12 +42,13 @@ h2 {
 
 button {
     border: none;
+    font-family: "Kumbh Sans", sans-serif;
 }
 
 body {
     display: flex;
     flex-direction: column;
-    font-family: monospace;
+    font-family: "Kumbh Sans", sans-serif;
 }
 
 /* end */
@@ -135,7 +137,6 @@ header nav > div:last-of-type {
     font-weight: var(--font-bold-weight);
     font-size: var(--paragraph-font-size);
     color: white;
-    font-family: monospace;
 }
 
 .items {
@@ -357,7 +358,7 @@ main section h5 {
     background: var(--light-grayish-blue);
     padding: 1rem 0;
     border-radius: 0.5rem;
-    font-family: monospace;
+    font-family: "Kumbh Sans", sans-serif;
 }
 
 .quantity__component > div {
@@ -372,7 +373,6 @@ main section h5 {
 
 .quantity__component button {
     background: var(--orange);
-    font-family: monospace;
     color: white;
     font-weight: var(--font-bold-weight);
     font-size: var(--paragraph-font-size);
