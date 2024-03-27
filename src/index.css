@@ -150,6 +150,10 @@ header nav > div:last-of-type {
     padding: 0.4rem 1rem;
 }
 
+.items::-webkit-scrollbar {
+    display: none;
+}
+
 .item {
     display: flex;
     justify-content: space-between;

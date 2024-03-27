@@ -145,9 +145,7 @@ selectQuantity.addEventListener('click', (e) => {
   if(e.target.classList.contains('plus')) {
     input.value ++;
   } else if(e.target.classList.contains('minus')) {
-    if(input.value !== 0) {
-      input.value --;
-    }
+    if(input.value !== 0) input.value --;
   } else {
     return;
   }
@@ -159,11 +157,8 @@ selectQuantity.addEventListener('click', (e) => {
 const addToCart = document.querySelector('.add_to_cart');
 const price = document.querySelector('.price');
 const itemName = document.querySelector('.item_name');
-const deleteBtn = document.querySelectorAll('.delete_item');
 
-
-const item = document.querySelector('.item');
-
+const itemArr = [];
 
 addToCart.addEventListener('click', (e) => {
   e.preventDefault;
@@ -180,35 +175,46 @@ addToCart.addEventListener('click', (e) => {
   if(input.value >= 1) {
     
     items.style.display= 'flex';
+    const div = document.createElement('div');
 
-    items.insertAdjacentHTML('beforeend', `
-    <div class="item">
-      <img src="images/image-product-1-thumbnail.jpg" alt="" class="item_img">
+    const content = `
+                  <img src="images/image-product-1-thumbnail.jpg" alt="" class="item_img">
 
-      <div>
-        <p class="product_description">${itemName.innerHTML.replace('<br>', '')}</p>
-        <p class="total_cost">
-          ${price.innerHTML} &times; ${input.value}
-          <span class="cost_calc">$${(+(price.innerHTML.slice(1)) * input.value).toFixed(2)} </span>
-        </p>
-      </div>
-    
-      <img src="images/icon-delete.svg" alt="a trashbin icon" class="delete_item">
-    </div>
-    `);
+                  <div>
+                    <p class="product_description">${itemName.innerHTML.replace('<br>', '')}</p>
+                    <p class="total_cost">
+                      ${price.innerHTML} &times; ${input.value}
+                      <span class="cost_calc">$${(+(price.innerHTML.slice(1)) * input.value).toFixed(2)} </span>
+                    </p>
+                  </div>
+                
+                  <img src="images/icon-delete.svg" alt="a trashbin icon" class="delete_item" btn_index ="${itemArr.length}">
+                `;
+
+    div.insertAdjacentHTML('beforeend', content);
+    div.setAttribute('index', `${itemArr.length}`);
+    div.classList.add('item');
+
+                        
+    itemArr.push(div);
+    console.log(itemArr, itemArr.length);
+
+    items.appendChild(div);
 
     document.querySelector('.checkout_btn').style.display = 'block';
+
+    const deleteBtn = document.querySelectorAll('.delete_item');
+
+//deleting items from cart component
+    deleteBtn.forEach(btn => {
+      btn.addEventListener('click', () => {
+        if(div.getAttribute('index') === btn.getAttribute('btn_index')) div.remove();
+      });
+    });
   };
 });
 
-// removing items from cart component
 
-deleteBtn.forEach(btn => {
-  btn.addEventListener('click', () => {
-    item.style.display = 'none';
-    console.log('deleted');
-  });
-});
 
 
 // desktop slider component 
@@ -253,8 +259,6 @@ const desktopSlide = document.querySelector('.desktop_slide_container');
           <div class="thumbnail"><img src="images/image-product-4-thumbnail.jpg" alt="product thumbnail image 4" class="thumbnail_img"></div>
         </div> 
       `);
-      // console.log(document.querySelector('.desktop_controls').getBoundingClientRect());
-
     }
   });
 
